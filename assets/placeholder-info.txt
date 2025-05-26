@@ -1,0 +1,48 @@
+ASSET REQUIREMENTS FOR TINY FARM RPG SIMPLE WEBSITE
+==================================================
+
+Please add the following images to this assets/ folder:
+
+REQUIRED IMAGES (Only 4 images needed!):
+---------------------------------------
+
+1. hero-background.png (1920x1080px recommended)
+   - Full-screen background image for the hero section
+   - Should be your most beautiful/impressive game scene
+   - Could be a wide farm view, village scene, or landscape
+   - This will be the main visual impact of your website
+
+2. screenshot-1.png (600x400px recommended)
+   - Game screenshot showing farming activities
+   - Spring farm scene with crops growing
+   - Show the core farming gameplay
+
+3. screenshot-2.png (600x400px recommended)
+   - Game screenshot showing village life
+   - Characters interacting, market scene, or social aspects
+   - Show the community/relationship elements
+
+4. screenshot-3.png (600x400px recommended)
+   - Game screenshot showing animal care
+   - Cute animals, barn scenes, or pet interactions
+   - Show the animal husbandry aspects
+
+TIPS FOR BEST RESULTS:
+---------------------
+
+- Use PNG format for pixel art (preserves crisp edges)
+- Avoid JPEG for pixel art (causes compression artifacts)
+- Keep file sizes reasonable for web loading
+- Ensure images represent your game accurately
+- Use consistent art style across all images
+- Consider adding subtle animations to static screenshots
+
+OPTIONAL ENHANCEMENTS:
+---------------------
+
+- Add animated GIFs for more dynamic showcases
+- Include character portraits for testimonials
+- Add seasonal variations of the same scenes
+- Create custom icons for features section
+
+Once you add these images, the website will automatically display them in the appropriate sections!

@@ -537,13 +537,13 @@ body {
 @media (max-width: 768px) {
     .hero-content {
         padding: 0 15px;
-        transform: translateY(0vh);
+        transform: translateY(8vh);
     }
 
     .game-logo {
         max-width: 500px;
         width: 95%;
-        margin-bottom: 240px;
+        margin-bottom: 60px;
     }
 
     .game-title {

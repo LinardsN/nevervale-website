@@ -519,6 +519,54 @@ body {
     color: var(--dark-slate);
 }
 
+.trust-commitments {
+    background: linear-gradient(135deg, rgba(45, 80, 22, 0.1) 0%, rgba(107, 154, 47, 0.08) 100%);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-green);
+    position: relative;
+}
+
+.trust-commitments h4 {
+    font-family: var(--font-pixel);
+    font-size: 16px;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.trust-commitments ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.trust-commitments li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--dark-slate);
+    line-height: 1.6;
+}
+
+.trust-commitments li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.trust-commitments li:last-child {
+    margin-bottom: 0;
+}
+
+.trust-commitments strong {
+    color: var(--primary-green);
+}
+
 .development-closing {
     font-style: italic;
     font-weight: 500;

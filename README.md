@@ -41,13 +41,19 @@ Your mission is not just to survive, but to help heal the broken world. Old stor
 
 ## 🔨 Development Journey
 
-Nevervale: The Last Haven is my passion project - a labor of love that I've been crafting story by story, system by system. As a solo developer, I'm pouring my heart into every aspect of this world, from the intricate farming mechanics to the atmospheric experience that will accompany your journey through the healing lands.
+Nevervale: The Last Haven is my passion project - a labor of love that I've been crafting story by story, system by system. As an indie developer, I'm pouring my heart into every aspect of this world, from the intricate farming mechanics to the atmospheric experience that will accompany your journey through the healing lands. I'm utilizing a combination of original programming, licensed assets, and AI-assisted artwork to bring this vision to life.
 
-I'm currently deep in development, implementing the corrupted creatures with their unique behaviors, designing the mysterious Harmony Stones that will pulse with ancient power, and creating farming systems that feel both satisfying and meaningful to the world's recovery. Each day brings new discoveries as I explore what it means to rebuild hope in a broken world.
+I'm currently deep in development, implementing the corrupted creatures with their unique behaviors, designing the mysterious Harmony Stones that will pulse with ancient power, and creating farming systems that feel both satisfying and meaningful to the world's recovery. I believe in transparency throughout this journey - I'll be sharing regular development updates, behind-the-scenes insights, and honest progress reports as the game takes shape.
 
 The most exciting part? I'm developing a unique "Land Healing" system where your actions literally transform the world around you. Watch as dead soil blooms with life, corrupted waters run clear again, and twisted creatures flee as the light of the Harmony Stones spreads across the valley. Every choice you make will leave a permanent mark on the world.
 
 I can't wait to share the secrets I'm hiding in the deepest corners of Nevervale - ancient ruins that hold clues to the Great Collapse, mysterious NPCs with their own tragic stories, and perhaps... ways to prevent such a catastrophe from ever happening again.
+
+### My Commitments to You:
+- **No Pay-to-Win:** Nevervale will be a complete experience with no microtransactions or premium currencies
+- **Regular Updates:** I'll share development progress, challenges, and milestones openly
+- **Community Input:** Your feedback and suggestions will help shape the final game
+- **Quality First:** I won't rush to release - the game will launch when it's truly ready
 
 The journey to release is still ahead, but every line of code brings us closer to a world where hope can truly bloom again.
 

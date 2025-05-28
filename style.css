@@ -89,14 +89,14 @@ body {
         2px 2px 8px rgba(0, 0, 0, 0.9),
         0 0 20px rgba(0, 0, 0, 0.7),
         1px 1px 3px rgba(0, 0, 0, 1);
-    transform: translateY(-15vh);
+    transform: translateY(3vh);
 }
 
 .game-logo {
     max-width: 800px;
     width: 95%;
     height: auto;
-    margin-bottom: 80px;
+    margin-bottom: 200px;
     filter:
         drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))
         drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.9))
@@ -537,12 +537,13 @@ body {
 @media (max-width: 768px) {
     .hero-content {
         padding: 0 15px;
+        transform: translateY(0vh);
     }
 
     .game-logo {
         max-width: 500px;
         width: 95%;
-        margin-bottom: 15px;
+        margin-bottom: 240px;
     }
 
     .game-title {

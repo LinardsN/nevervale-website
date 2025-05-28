@@ -1,0 +1,24 @@
+# Asset Packs - Keep locally but exclude from GitHub
+Farm RPG - Tiny Asset Pack - (All in One)/
+
+# Common files to ignore
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

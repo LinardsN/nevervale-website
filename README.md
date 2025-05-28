@@ -36,7 +36,56 @@ A clean, focused one-page promotional website for your 2D pixel art farming RPG 
 
 ## 🚀 Getting Started
 
-### 1. Add Your Game Assets
+### 1. Start the Development Server
+
+To test the website locally, you need to run a local web server. Here are several options:
+
+#### Option A: Python (Recommended)
+If you have Python installed:
+```bash
+# Navigate to the project directory
+cd nevervale-website
+
+# Python 3.x
+python -m http.server 8000
+
+# Python 2.x (if needed)
+python -m SimpleHTTPServer 8000
+```
+
+#### Option B: Node.js
+If you have Node.js installed:
+```bash
+# Install a simple server globally
+npm install -g http-server
+
+# Navigate to project directory and start server
+cd nevervale-website
+http-server -p 8000
+```
+
+#### Option C: PHP
+If you have PHP installed:
+```bash
+# Navigate to project directory
+cd nevervale-website
+
+# Start PHP built-in server
+php -S localhost:8000
+```
+
+#### Option D: Live Server (VS Code Extension)
+If you're using VS Code:
+1. Install the "Live Server" extension
+2. Right-click on `index.html`
+3. Select "Open with Live Server"
+
+After starting the server, open your browser and go to:
+**http://localhost:8000**
+
+> **Note**: You need to run a local server because modern browsers block loading local files directly due to security restrictions. Simply opening `index.html` in your browser won't work properly.
+
+### 2. Add Your Game Assets
 
 Replace the placeholder image references in the `assets/` folder with your actual game screenshots:
 

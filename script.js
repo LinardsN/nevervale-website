@@ -34,6 +34,24 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
+    // Lore Tab Functionality
+    const loreTabs = document.querySelectorAll('.lore-tab');
+    const loreTabContents = document.querySelectorAll('.lore-tab-content');
+
+    loreTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+
+            // Remove active class from all tabs and content
+            loreTabs.forEach(t => t.classList.remove('active'));
+            loreTabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked tab and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
     const emailInput = document.querySelector('.email-input');

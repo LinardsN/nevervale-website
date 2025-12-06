@@ -52,6 +52,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Updates Pagination Functionality
+    const postsPerPage = 4;
+    const allPosts = document.querySelectorAll('.update-post');
+    const pagination = document.getElementById('pagination');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const pageInfo = document.getElementById('page-info');
+
+    let currentPage = 1;
+    const totalPages = Math.ceil(allPosts.length / postsPerPage);
+
+    function showPage(page) {
+        const startIndex = (page - 1) * postsPerPage;
+        const endIndex = startIndex + postsPerPage;
+
+        allPosts.forEach((post, index) => {
+            if (index >= startIndex && index < endIndex) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+
+        // Update pagination info
+        pageInfo.textContent = `Page ${page} of ${totalPages}`;
+
+        // Update button states
+        prevBtn.disabled = page === 1;
+        nextBtn.disabled = page === totalPages;
+    }
+
+    // Only show pagination if more than 4 posts
+    if (allPosts.length > postsPerPage) {
+        pagination.style.display = 'flex';
+        showPage(1);
+
+        prevBtn.addEventListener('click', function() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                // Scroll to updates section
+                document.getElementById('updates').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        nextBtn.addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+                // Scroll to updates section
+                document.getElementById('updates').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
     const emailInput = document.querySelector('.email-input');

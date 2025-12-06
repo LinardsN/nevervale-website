@@ -644,43 +644,16 @@ body {
     }
 
     .hero-content {
-        padding: 0 15px 30px;
-        transform: none;
+        display: none;
     }
 
     .hero-overlay {
         background: linear-gradient(
             to bottom,
             transparent 0%,
-            transparent 60%,
-            rgba(10, 10, 15, 0.5) 80%,
-            rgba(10, 10, 15, 0.85) 100%
+            transparent 85%,
+            var(--void-black) 100%
         );
-    }
-
-    .game-subtitle {
-        font-size: 11px;
-        letter-spacing: 0.2em;
-        margin-bottom: 10px;
-    }
-
-    .game-description {
-        font-size: 13px;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .action-buttons {
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    .btn {
-        width: auto;
-        max-width: none;
-        padding: 10px 18px;
-        font-size: 11px;
-        text-align: center;
     }
 
     .lore-tabs {

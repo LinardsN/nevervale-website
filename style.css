@@ -636,16 +636,15 @@ body {
     }
 
     .hero {
-        min-height: auto;
-        aspect-ratio: 3 / 4;
-        background-image: url('./assets/cover_art.png');
+        min-height: 100vh;
+        background-image: url('./assets/mobile_hero.png');
         background-size: cover;
         background-position: center top;
         align-items: flex-end;
     }
 
     .hero-content {
-        padding: 0 20px 30px;
+        padding: 0 20px 40px;
         transform: none;
     }
 
@@ -653,9 +652,10 @@ body {
         background: linear-gradient(
             to bottom,
             transparent 0%,
-            transparent 40%,
-            rgba(10, 10, 15, 0.6) 70%,
-            rgba(10, 10, 15, 0.95) 100%
+            transparent 50%,
+            rgba(10, 10, 15, 0.5) 70%,
+            rgba(10, 10, 15, 0.9) 90%,
+            var(--void-black) 100%
         );
     }
 

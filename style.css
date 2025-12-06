@@ -640,44 +640,46 @@ body {
         background-image: url('./assets/mobile_hero.png');
         background-size: cover;
         background-position: center top;
-        align-items: center;
+        align-items: flex-end;
     }
 
     .hero-content {
-        padding: 0 20px;
-        transform: translateY(-5vh);
+        padding: 0 15px 30px;
+        transform: none;
     }
 
     .hero-overlay {
-        background: rgba(10, 10, 15, 0.4);
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 60%,
+            rgba(10, 10, 15, 0.5) 80%,
+            rgba(10, 10, 15, 0.85) 100%
+        );
     }
 
-    .game-subtitle,
+    .game-subtitle {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        margin-bottom: 10px;
+    }
+
     .game-description {
-        text-shadow:
-            0 0 10px rgba(0, 0, 0, 1),
-            0 0 20px rgba(0, 0, 0, 0.9),
-            0 2px 4px rgba(0, 0, 0, 1);
-    }
-
-    .btn-primary {
-        box-shadow:
-            0 0 20px rgba(212, 168, 75, 0.5),
-            0 4px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    .btn-secondary {
-        background: rgba(10, 10, 15, 0.6);
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 20px;
     }
 
     .action-buttons {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        gap: 10px;
     }
 
     .btn {
-        width: 100%;
-        max-width: 280px;
+        width: auto;
+        max-width: none;
+        padding: 10px 18px;
+        font-size: 11px;
         text-align: center;
     }
 

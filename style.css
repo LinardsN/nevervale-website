@@ -204,7 +204,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     margin: 0 auto 60px;
     width: 150px;
 }
@@ -225,9 +225,11 @@ body {
 }
 
 .section-divider span {
-    color: var(--gold-bright);
-    font-size: 12px;
-    line-height: 1;
+    width: 8px;
+    height: 8px;
+    background: var(--gold-bright);
+    transform: rotate(45deg);
+    flex-shrink: 0;
 }
 
 /* ========================================

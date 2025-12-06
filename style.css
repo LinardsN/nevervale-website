@@ -201,23 +201,33 @@ body {
 
 /* Decorative divider */
 .section-divider {
-    width: 150px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     margin: 0 auto 60px;
-    position: relative;
+    width: 150px;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: '';
+    width: 50px;
+    height: 2px;
 }
 
 .section-divider::before {
-    content: '◆';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, transparent, var(--gold-bright));
+}
+
+.section-divider::after {
+    background: linear-gradient(90deg, var(--gold-bright), transparent);
+}
+
+.section-divider span {
     color: var(--gold-bright);
     font-size: 12px;
-    background: var(--void-black);
-    padding: 0 15px;
+    line-height: 1;
 }
 
 /* ========================================
@@ -394,10 +404,6 @@ body {
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--corruption-purple), var(--gold-dark), var(--corruption-purple), transparent);
-}
-
-.updates-section .section-divider::before {
-    background: var(--void-black);
 }
 
 .updates-container {

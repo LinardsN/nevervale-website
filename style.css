@@ -635,8 +635,28 @@ body {
         --section-padding: 70px 20px;
     }
 
+    .hero {
+        min-height: auto;
+        aspect-ratio: 3 / 4;
+        background-image: url('./assets/cover_art.png');
+        background-size: cover;
+        background-position: center top;
+        align-items: flex-end;
+    }
+
     .hero-content {
-        padding: 0 20px 60px;
+        padding: 0 20px 30px;
+        transform: none;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(10, 10, 15, 0.6) 70%,
+            rgba(10, 10, 15, 0.95) 100%
+        );
     }
 
     .action-buttons {

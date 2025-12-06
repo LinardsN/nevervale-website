@@ -107,6 +107,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Read More button functionality
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const updateText = this.previousElementSibling;
+            updateText.classList.toggle('expanded');
+
+            if (updateText.classList.contains('expanded')) {
+                this.textContent = 'Read Less';
+            } else {
+                this.textContent = 'Read More';
+            }
+        });
+    });
+
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
     const emailInput = document.querySelector('.email-input');

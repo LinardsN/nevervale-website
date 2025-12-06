@@ -57,8 +57,8 @@ body {
     text-align: center;
     overflow: hidden;
     background-image: url('./assets/cover_art.png');
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-position: center top;
     background-repeat: no-repeat;
     background-color: #1a1a2e; /* Fallback color */
 }

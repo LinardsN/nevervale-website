@@ -966,10 +966,13 @@ a.read-more-btn {
 
     .hero {
         min-height: 100vh;
+        align-items: flex-end;
+    }
+
+    .hero::before {
         background-image: url('./assets/mobile_hero.png');
         background-size: cover;
         background-position: center top;
-        align-items: flex-end;
     }
 
     .hero-content {

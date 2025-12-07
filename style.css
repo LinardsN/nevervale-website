@@ -68,11 +68,22 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    overflow: hidden;
+    background-color: var(--void-black);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('./assets/hero_wide.png');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    background-color: var(--void-black);
+    z-index: 0;
 }
 
 .hero-overlay {

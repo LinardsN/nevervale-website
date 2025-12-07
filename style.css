@@ -78,7 +78,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Fallback */
+    height: 100lvh; /* Large viewport height - stays constant when address bar hides */
     background-image: url('./assets/hero_wide.png');
     background-size: cover;
     background-position: center top;
@@ -970,6 +971,8 @@ a.read-more-btn {
     }
 
     .hero::before {
+        height: 100vh; /* Fallback */
+        height: 100lvh; /* Large viewport height - stays constant when address bar hides */
         background-image: url('./assets/mobile_hero.png');
         background-size: cover;
         background-position: center top;

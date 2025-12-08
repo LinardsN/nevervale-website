@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Newsletter form submission
-    const newsletterForm = document.querySelector('.newsletter-form');
+    // Newsletter form submission (Brevo)
+    const newsletterForm = document.getElementById('newsletter-form');
     const emailInput = document.querySelector('.email-input');
 
     if (newsletterForm) {
@@ -133,12 +133,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const email = emailInput.value.trim();
 
-            if (validateEmail(email)) {
-                showNotification('Thank you for subscribing! We\'ll keep you updated on our progress.', 'success');
-                emailInput.value = '';
-            } else {
+            if (!validateEmail(email)) {
                 showNotification('Please enter a valid email address.', 'error');
+                return;
             }
+
+            const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Subscribing...';
+            submitBtn.disabled = true;
+
+            // Submit to Brevo
+            const formData = new FormData();
+            formData.append('EMAIL', email);
+
+            fetch(newsletterForm.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                showNotification('Thank you for subscribing! We\'ll keep you updated.', 'success');
+                emailInput.value = '';
+            })
+            .catch(() => {
+                showNotification('Something went wrong. Please try again.', 'error');
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
 

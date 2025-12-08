@@ -127,18 +127,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const newsletterForm = document.getElementById('newsletter-form');
     const emailInput = document.querySelector('.email-input');
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwi9-oJ181NPYej57kK5YrXO8Mtukd6PBImFkUlitIfqMqcbITZdABzli4pDEjLzqoMQg/exec';
-    let formLoadTime = Date.now();
-    let lastSubmitTime = 0;
-    let hasSubscribed = false;
     const COOLDOWN_MS = 60000; // 1 minute cooldown
+    let formLoadTime = Date.now();
+
+    // Load persisted state from localStorage
+    let lastSubmitTime = parseInt(localStorage.getItem('nv_lastSubmit') || '0');
+    let hasSubscribed = localStorage.getItem('nv_subscribed') === 'true';
 
     if (newsletterForm) {
         const submitBtn = newsletterForm.querySelector('button[type="submit"]');
 
+        // If already subscribed, disable form on page load
+        if (hasSubscribed) {
+            submitBtn.textContent = 'Subscribed!';
+            submitBtn.disabled = true;
+            emailInput.disabled = true;
+        }
+
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Anti-spam: Check if already subscribed this session
+            // Anti-spam: Check if already subscribed
             if (hasSubscribed) {
                 showNotification('You have already subscribed!', 'error');
                 return;
@@ -158,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Anti-spam: Check cooldown (1 minute between attempts)
+            // Anti-spam: Check cooldown (1 minute between attempts) - persists across refresh
             const timeSinceLastSubmit = Date.now() - lastSubmitTime;
             if (lastSubmitTime > 0 && timeSinceLastSubmit < COOLDOWN_MS) {
                 const secondsLeft = Math.ceil((COOLDOWN_MS - timeSinceLastSubmit) / 1000);
@@ -177,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Subscribing...';
             submitBtn.disabled = true;
             lastSubmitTime = Date.now();
+            localStorage.setItem('nv_lastSubmit', lastSubmitTime.toString());
 
             // Submit to Google Sheets
             fetch(GOOGLE_SCRIPT_URL, {
@@ -192,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 emailInput.value = '';
                 // Disable form permanently after successful subscription
                 hasSubscribed = true;
+                localStorage.setItem('nv_subscribed', 'true');
                 submitBtn.textContent = 'Subscribed!';
                 submitBtn.disabled = true;
                 emailInput.disabled = true;

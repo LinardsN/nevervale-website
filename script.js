@@ -123,17 +123,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Newsletter form submission (Brevo)
+    // Newsletter form submission (Brevo via hidden iframe)
     const newsletterForm = document.getElementById('newsletter-form');
     const emailInput = document.querySelector('.email-input');
 
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
             const email = emailInput.value.trim();
 
             if (!validateEmail(email)) {
+                e.preventDefault();
                 showNotification('Please enter a valid email address.', 'error');
                 return;
             }
@@ -143,26 +142,13 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Subscribing...';
             submitBtn.disabled = true;
 
-            // Submit to Brevo
-            const formData = new FormData();
-            formData.append('EMAIL', email);
-
-            fetch(newsletterForm.action, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .then(() => {
+            // Form submits to hidden iframe, show success after brief delay
+            setTimeout(() => {
                 showNotification('Thank you for subscribing! We\'ll keep you updated.', 'success');
                 emailInput.value = '';
-            })
-            .catch(() => {
-                showNotification('Something went wrong. Please try again.', 'error');
-            })
-            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            });
+            }, 1000);
         });
     }
 

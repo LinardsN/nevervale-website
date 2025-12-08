@@ -127,10 +127,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const newsletterForm = document.getElementById('newsletter-form');
     const emailInput = document.querySelector('.email-input');
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8svX0Ll74lVA-_eYGWjcnx04JGMAjCHWETjlfr5nrA4NvFVOB2HYSHArtTVWdSHw7GA/exec';
+    let formLoadTime = Date.now();
 
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Anti-spam: Check honeypot field (bots fill this, humans don't see it)
+            const honeypot = newsletterForm.querySelector('input[name="website"]');
+            if (honeypot && honeypot.value) {
+                // Bot detected - silently fail
+                showNotification('Thank you for subscribing!', 'success');
+                return;
+            }
+
+            // Anti-spam: Check if form was submitted too quickly (less than 3 seconds)
+            if (Date.now() - formLoadTime < 3000) {
+                showNotification('Please wait a moment before subscribing.', 'error');
+                return;
+            }
+
             const email = emailInput.value.trim();
 
             if (!validateEmail(email)) {

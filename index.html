@@ -260,6 +260,8 @@
             <div class="section-divider"><span></span></div>
             <form class="newsletter-form" id="newsletter-form">
                 <input type="email" name="email" placeholder="Enter your email" class="email-input" required>
+                <!-- Honeypot anti-spam field - hidden from humans -->
+                <input type="text" name="website" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" tabindex="-1" autocomplete="off">
                 <button type="submit" class="btn btn-primary">Subscribe</button>
             </form>
             <p class="newsletter-message" id="newsletter-message"></p>

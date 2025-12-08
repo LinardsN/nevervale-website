@@ -123,16 +123,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Newsletter form submission (Brevo via hidden iframe)
+    // Newsletter form submission (Google Sheets)
     const newsletterForm = document.getElementById('newsletter-form');
     const emailInput = document.querySelector('.email-input');
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8svX0Ll74lVA-_eYGWjcnx04JGMAjCHWETjlfr5nrA4NvFVOB2HYSHArtTVWdSHw7GA/exec';
 
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             const email = emailInput.value.trim();
 
             if (!validateEmail(email)) {
-                e.preventDefault();
                 showNotification('Please enter a valid email address.', 'error');
                 return;
             }
@@ -142,13 +143,26 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Subscribing...';
             submitBtn.disabled = true;
 
-            // Form submits to hidden iframe, show success after brief delay
-            setTimeout(() => {
+            // Submit to Google Sheets
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'email=' + encodeURIComponent(email)
+            })
+            .then(() => {
                 showNotification('Thank you for subscribing! We\'ll keep you updated.', 'success');
                 emailInput.value = '';
+            })
+            .catch(() => {
+                showNotification('Something went wrong. Please try again.', 'error');
+            })
+            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 1000);
+            });
         });
     }
 

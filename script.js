@@ -126,12 +126,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Newsletter form submission (Google Sheets)
     const newsletterForm = document.getElementById('newsletter-form');
     const emailInput = document.querySelector('.email-input');
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbySKS2eBz3fvsyF9pQ18P_KGy3Yw6m57yCgXza8pXb-AEdfIXXID0mHPR4Nwm-6uH2-1g/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwi9-oJ181NPYej57kK5YrXO8Mtukd6PBImFkUlitIfqMqcbITZdABzli4pDEjLzqoMQg/exec';
     let formLoadTime = Date.now();
+    let lastSubmitTime = 0;
+    let hasSubscribed = false;
+    const COOLDOWN_MS = 60000; // 1 minute cooldown
 
     if (newsletterForm) {
+        const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Anti-spam: Check if already subscribed this session
+            if (hasSubscribed) {
+                showNotification('You have already subscribed!', 'error');
+                return;
+            }
 
             // Anti-spam: Check honeypot field (bots fill this, humans don't see it)
             const honeypot = newsletterForm.querySelector('input[name="website"]');
@@ -141,9 +152,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Anti-spam: Check if form was submitted too quickly (less than 3 seconds)
+            // Anti-spam: Check if form was submitted too quickly after page load (less than 3 seconds)
             if (Date.now() - formLoadTime < 3000) {
                 showNotification('Please wait a moment before subscribing.', 'error');
+                return;
+            }
+
+            // Anti-spam: Check cooldown (1 minute between attempts)
+            const timeSinceLastSubmit = Date.now() - lastSubmitTime;
+            if (lastSubmitTime > 0 && timeSinceLastSubmit < COOLDOWN_MS) {
+                const secondsLeft = Math.ceil((COOLDOWN_MS - timeSinceLastSubmit) / 1000);
+                showNotification(`Please wait ${secondsLeft} seconds before trying again.`, 'error');
                 return;
             }
 
@@ -154,10 +173,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            const submitBtn = newsletterForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Subscribing...';
             submitBtn.disabled = true;
+            lastSubmitTime = Date.now();
 
             // Submit to Google Sheets
             fetch(GOOGLE_SCRIPT_URL, {
@@ -171,11 +190,14 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(() => {
                 showNotification('Thank you for subscribing! We\'ll keep you updated.', 'success');
                 emailInput.value = '';
+                // Disable form permanently after successful subscription
+                hasSubscribed = true;
+                submitBtn.textContent = 'Subscribed!';
+                submitBtn.disabled = true;
+                emailInput.disabled = true;
             })
             .catch(() => {
                 showNotification('Something went wrong. Please try again.', 'error');
-            })
-            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             });

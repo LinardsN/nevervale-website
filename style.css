@@ -951,20 +951,18 @@ a.read-more-btn {
 }
 
 .footer-links {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .footer-links a {
-    color: var(--text-muted);
+    color: #3a3a3a;
     text-decoration: none;
-    font-size: 13px;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
+    font-size: 11px;
+    transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-    opacity: 1;
-    text-decoration: underline;
+    color: #555;
 }
 
 /* ========================================

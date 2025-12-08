@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Newsletter form submission (Google Sheets)
     const newsletterForm = document.getElementById('newsletter-form');
     const emailInput = document.querySelector('.email-input');
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8svX0Ll74lVA-_eYGWjcnx04JGMAjCHWETjlfr5nrA4NvFVOB2HYSHArtTVWdSHw7GA/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbySKS2eBz3fvsyF9pQ18P_KGy3Yw6m57yCgXza8pXb-AEdfIXXID0mHPR4Nwm-6uH2-1g/exec';
     let formLoadTime = Date.now();
 
     if (newsletterForm) {

@@ -1,4 +1,4 @@
-// Tiny Farm RPG Website JavaScript
+// Nevervale Website JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for navigation links
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.screenshot-item, .demo-placeholder').forEach(el => {
+    document.querySelectorAll('.demo-placeholder').forEach(el => {
         observer.observe(el);
     });
 

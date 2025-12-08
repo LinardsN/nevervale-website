@@ -1,16 +1,16 @@
 # Nevervale: The Last Haven
 
-**A post-apocalyptic farming RPG where hope blooms in a world reborn.**
+**A cooperative fantasy board game where hope blooms in a world reborn.**
 
-🎮 **Coming Soon** 🎮
+🎲 **Coming Soon** 🎲
 
 ---
 
 ## 🌱 About the Game
 
-Nevervale: The Last Haven is a 2D pixel art survival RPG set in a world recovering from catastrophe. A century after the Great Collapse destroyed civilization, you are among the brave pioneers venturing into the healing lands to rebuild what was lost.
+Nevervale: The Last Haven is a cooperative tabletop board game for 1-4 players set in a world recovering from catastrophe. A century after the Great Collapse destroyed civilization, you are among the brave pioneers venturing into the healing lands to rebuild what was lost.
 
-Settle in a blessed valley untouched by corruption, farm the fertile soil, discover ancient Harmony Stones, and help restore life to a broken world. Your choices will determine whether civilization rises again or remains forever lost to the shadows of the past.
+Cleanse corrupted lands using ancient Harmony Stones, fight twisted creatures that threaten your haven, and protect the last safe valley in a world consumed by darkness. Your choices and teamwork will determine whether civilization rises again or remains forever lost to the shadows of the past.
 
 ---
 
@@ -39,41 +39,21 @@ Your mission is not just to survive, but to help heal the broken world. Old stor
 
 ---
 
-## 🔨 Development Journey
-
-Nevervale: The Last Haven is my passion project - a labor of love that I've been crafting story by story, system by system. As an indie developer, I'm pouring my heart into every aspect of this world, from the intricate farming mechanics to the atmospheric experience that will accompany your journey through the healing lands. I'm utilizing a combination of original programming, licensed assets, and AI-assisted artwork to bring this vision to life.
-
-I'm currently deep in development, implementing the corrupted creatures with their unique behaviors, designing the mysterious Harmony Stones that will pulse with ancient power, and creating farming systems that feel both satisfying and meaningful to the world's recovery. I believe in transparency throughout this journey - I'll be sharing regular development updates, behind-the-scenes insights, and honest progress reports as the game takes shape.
-
-The most exciting part? I'm developing a unique "Land Healing" system where your actions literally transform the world around you. Watch as dead soil blooms with life, corrupted waters run clear again, and twisted creatures flee as the light of the Harmony Stones spreads across the valley. Every choice you make will leave a permanent mark on the world.
-
-I can't wait to share the secrets I'm hiding in the deepest corners of Nevervale - ancient ruins that hold clues to the Great Collapse, mysterious NPCs with their own tragic stories, and perhaps... ways to prevent such a catastrophe from ever happening again.
-
-### My Commitments to You:
-- **No Pay-to-Win:** Nevervale will be a complete experience with no microtransactions or premium currencies
-- **Regular Updates:** I'll share development progress, challenges, and milestones openly
-- **Community Input:** Your feedback and suggestions will help shape the final game
-- **Quality First:** I won't rush to release - the game will launch when it's truly ready
-
-The journey to release is still ahead, but every line of code brings us closer to a world where hope can truly bloom again.
-
----
-
 ## 🎯 Game Features
 
-- **🌾 Farming & Agriculture** - Cultivate crops in blessed soil and restore fertility to corrupted lands
-- **🏘️ Settlement Building** - Establish and grow your community as more survivors join your cause
-- **💎 Harmony Stone Discovery** - Find and activate ancient crystals to cleanse the world
+- **💎 Harmony Stone Mechanics** - Find and activate ancient crystals to cleanse corrupted lands
 - **⚔️ Monster Encounters** - Face corrupted creatures that threaten the healing lands
+- **🏘️ Settlement Building** - Grow your village as you complete quests and expand safe territory
+- **🎲 Custom Action Dice** - Unique dice designed specifically for the game
+- **🗺️ Dynamic Hex Map** - Physical hex tiles that transform between corrupted and pure states
+- **👥 4 Unique Heroes** - Each with their own skill trees and abilities
 - **📜 Rich Storytelling** - Uncover the mysteries of the Great Collapse through exploration
-- **🎨 Beautiful Pixel Art** - Immersive 2D visuals bringing the world to life
-- **🎵 Atmospheric Soundtrack** - Music that captures both the melancholy of loss and hope of renewal
 
 ---
 
 ## 🚀 Development Status
 
-Nevervale: The Last Haven is currently in active development. We're crafting every detail with care to bring you an unforgettable journey through a world where hope and nature triumph over darkness.
+Nevervale: The Last Haven is currently in active development. The rulebook is nearing completion with 15 sections of rules and mechanics. We're carefully balancing every aspect to create a challenging but rewarding cooperative experience.
 
 **Stay tuned for updates on our progress!**
 

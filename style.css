@@ -133,6 +133,11 @@ body {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
+/* Mobile Hero Tagline - Hidden on desktop */
+.hero-mobile-tagline {
+    display: none;
+}
+
 /* Buttons */
 .action-buttons {
     display: flex;
@@ -1004,6 +1009,30 @@ a.read-more-btn {
             transparent 85%,
             var(--void-black) 100%
         );
+    }
+
+    /* Mobile Hero Tagline */
+    .hero-mobile-tagline {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        text-align: center;
+        padding: 10px 20px;
+        background: rgba(10, 10, 15, 0.75);
+        border-radius: var(--border-radius);
+        border: 1px solid rgba(212, 168, 75, 0.3);
+    }
+
+    .hero-mobile-tagline span {
+        font-family: var(--font-display);
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold-bright);
+        white-space: nowrap;
     }
 
     .lore-tabs {

@@ -429,8 +429,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 /* Update Post Cards */
@@ -481,7 +481,7 @@ body {
 }
 
 .update-content {
-    padding: 35px;
+    padding: 25px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -489,7 +489,7 @@ body {
 
 .update-title {
     font-family: var(--font-display);
-    font-size: clamp(18px, 2.5vw, 24px);
+    font-size: clamp(16px, 2vw, 20px);
     color: var(--gold-bright);
     margin-bottom: 8px;
 }
@@ -504,11 +504,9 @@ body {
 }
 
 .update-text {
-    flex: 1;
     max-height: 80px;
     overflow: hidden;
     position: relative;
-    transition: max-height 0.4s ease;
 }
 
 .update-text::after {
@@ -542,6 +540,11 @@ body {
     margin-bottom: 0;
 }
 
+.update-footer {
+    margin-top: auto;
+    padding-top: 15px;
+}
+
 .read-more-btn {
     display: block;
     background: transparent;
@@ -553,7 +556,6 @@ body {
     font-size: 12px;
     letter-spacing: 0.05em;
     cursor: pointer;
-    margin-top: 15px;
     transition: var(--transition);
     width: 100%;
     text-align: center;
@@ -635,7 +637,9 @@ a.read-more-btn {
 
 .post-hero-image img {
     width: 100%;
-    height: auto;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
     border-radius: var(--border-radius);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
@@ -744,6 +748,10 @@ a.read-more-btn {
         margin-bottom: 40px;
     }
 
+    .post-hero-image img {
+        height: 300px;
+    }
+
     .post-content {
         padding: 0 20px 60px;
     }
@@ -828,44 +836,32 @@ a.read-more-btn {
     border: 0;
 }
 
-/* Pagination */
-.pagination {
+/* Load More Button */
+.load-more-container {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
-.pagination-btn {
+.load-more-btn {
     font-family: var(--font-display);
     background: transparent;
     border: 1px solid var(--gold-dark);
-    color: var(--text-muted);
-    padding: 12px 25px;
+    color: var(--gold-bright);
+    padding: 15px 50px;
     border-radius: var(--border-radius);
-    font-size: 13px;
-    letter-spacing: 0.05em;
+    font-size: 14px;
+    letter-spacing: 0.1em;
     cursor: pointer;
     transition: var(--transition);
+    text-transform: uppercase;
 }
 
-.pagination-btn:hover:not(:disabled) {
-    background: rgba(212, 168, 75, 0.1);
+.load-more-btn:hover {
+    background: rgba(212, 168, 75, 0.15);
     border-color: var(--gold-bright);
-    color: var(--gold-bright);
-}
-
-.pagination-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.pagination-info {
-    font-family: var(--font-ui);
-    color: var(--text-muted);
-    font-size: 14px;
+    box-shadow: 0 0 20px rgba(212, 168, 75, 0.2);
 }
 
 /* ========================================
@@ -973,10 +969,16 @@ a.read-more-btn {
 /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+    .updates-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
     .updates-container {
         grid-template-columns: 1fr;
-        max-width: 600px;
+        max-width: 500px;
     }
 }
 

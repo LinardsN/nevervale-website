@@ -158,8 +158,36 @@
             <div class="section-divider"><span></span></div>
             <div class="updates-container" id="updates-container">
 
-                <!-- Update Post 2 (Newer - shows first) -->
+                <!-- Update Post 3 (Newest - shows first) -->
                 <article class="update-post" data-post="1">
+                    <div class="update-image">
+                        <img src="assets/blog3.jpg" alt="Nevervale - The World Fights Back">
+                    </div>
+                    <div class="update-content">
+                        <h3 class="update-title">Nevervale Update #3 - The World Fights Back</h3>
+                        <p class="update-date">December 2025</p>
+                        <div class="update-text">
+                            <p>One of my favorite things about designing Nevervale is the tension between healing and surviving.</p>
+                            <p>You're not just fighting monsters - you're racing against the world itself. Every round, corruption spreads. That peaceful meadow you cleansed three turns ago? Watch it closely. One marker, two markers... at three, the darkness reclaims it. The tile physically changes back to corrupted. Everything you worked for, gone.</p>
+                            <p>That's why Harmony Stones matter so much. When you place one, that tile becomes permanently protected. A safe zone that can never fall. But stones are limited. You need 8 to win the campaign, and you'll only find 10. Every placement is a strategic decision.</p>
+                        </div>
+                        <div class="update-footer">
+                            <a href="posts/update-3/" class="read-more-btn">Read More</a>
+                            <div class="update-tags">
+                                <span class="tag">#boardgames</span>
+                                <span class="tag">#tabletopgames</span>
+                                <span class="tag">#GameDesign</span>
+                                <span class="tag">#indieboardgame</span>
+                                <span class="tag">#boardgamedesign</span>
+                                <span class="tag">#FantasyBoardGame</span>
+                                <span class="tag">#nevervale</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Update Post 2 -->
+                <article class="update-post" data-post="2">
                     <div class="update-image">
                         <img src="assets/cover_art.png" alt="Nevervale: The Last Haven - Four heroes facing a protected village">
                     </div>
@@ -185,21 +213,23 @@
                             <p>The hardest part of the process is finding that balance where it's challenging but not frustrating, where your choices matter but dice rolls still give the luck factor.</p>
                             <p class="update-closing">Nevervale is getting closer. Every day, a little bit closer.</p>
                         </div>
-                        <a href="posts/update-2/" class="read-more-btn">Read More</a>
-                        <div class="update-tags">
-                            <span class="tag">#boardgames</span>
-                            <span class="tag">#tabletopgames</span>
-                            <span class="tag">#GameDesign</span>
-                            <span class="tag">#indieboardgame</span>
-                            <span class="tag">#boardgamedesign</span>
-                            <span class="tag">#FantasyBoardGame</span>
-                            <span class="tag">#nevervale</span>
+                        <div class="update-footer">
+                            <a href="posts/update-2/" class="read-more-btn">Read More</a>
+                            <div class="update-tags">
+                                <span class="tag">#boardgames</span>
+                                <span class="tag">#tabletopgames</span>
+                                <span class="tag">#GameDesign</span>
+                                <span class="tag">#indieboardgame</span>
+                                <span class="tag">#boardgamedesign</span>
+                                <span class="tag">#FantasyBoardGame</span>
+                                <span class="tag">#nevervale</span>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- Update Post 1 (Older - shows second) -->
-                <article class="update-post" data-post="2">
+                <!-- Update Post 1 (Oldest) -->
+                <article class="update-post" data-post="3">
                     <div class="update-image">
                         <img src="assets/1764719829886.jpg" alt="Nevervale game components - hex tiles and cards">
                     </div>
@@ -214,24 +244,24 @@
                             <p>The prototype and first version will be made with AI-generated artwork, because commissioning an artist to do it the way I want would be too expensive, since the game will consist of approximately 190 cards and 80 hex game tiles. I hope to collaborate with an artist in the future to create something more special.</p>
                             <p>Still a lot of work ahead, but I'm excited about the progress. If anyone is interested in following along - I'll gladly share.</p>
                         </div>
-                        <a href="posts/update-1/" class="read-more-btn">Read More</a>
-                        <div class="update-tags">
-                            <span class="tag">#boardgames</span>
-                            <span class="tag">#tabletopgames</span>
-                            <span class="tag">#GameDesign</span>
-                            <span class="tag">#indieboardgame</span>
-                            <span class="tag">#boardgamedesign</span>
-                            <span class="tag">#FantasyBoardGame</span>
-                            <span class="tag">#nevervale</span>
+                        <div class="update-footer">
+                            <a href="posts/update-1/" class="read-more-btn">Read More</a>
+                            <div class="update-tags">
+                                <span class="tag">#boardgames</span>
+                                <span class="tag">#tabletopgames</span>
+                                <span class="tag">#GameDesign</span>
+                                <span class="tag">#indieboardgame</span>
+                                <span class="tag">#boardgamedesign</span>
+                                <span class="tag">#FantasyBoardGame</span>
+                                <span class="tag">#nevervale</span>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- Pagination (hidden when 4 or fewer posts) -->
-                <div class="pagination" id="pagination" style="display: none;">
-                    <button class="pagination-btn" id="prev-btn" disabled>Previous</button>
-                    <span class="pagination-info" id="page-info">Page 1 of 1</span>
-                    <button class="pagination-btn" id="next-btn" disabled>Next</button>
+                <!-- Load More Button (hidden when all posts visible) -->
+                <div class="load-more-container" id="load-more-container" style="display: none;">
+                    <button class="load-more-btn" id="load-more-btn">Load More</button>
                 </div>
 
             </div>

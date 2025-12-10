@@ -52,58 +52,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Updates Pagination Functionality
-    const postsPerPage = 4;
+    // Load More Functionality
+    const initialPosts = 6;
+    const postsPerLoad = 3;
     const allPosts = document.querySelectorAll('.update-post');
-    const pagination = document.getElementById('pagination');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const pageInfo = document.getElementById('page-info');
+    const loadMoreContainer = document.getElementById('load-more-container');
+    const loadMoreBtn = document.getElementById('load-more-btn');
 
-    let currentPage = 1;
-    const totalPages = Math.ceil(allPosts.length / postsPerPage);
+    let visiblePosts = initialPosts;
 
-    function showPage(page) {
-        const startIndex = (page - 1) * postsPerPage;
-        const endIndex = startIndex + postsPerPage;
-
+    function showPosts() {
         allPosts.forEach((post, index) => {
-            if (index >= startIndex && index < endIndex) {
-                post.style.display = 'block';
+            if (index < visiblePosts) {
+                post.style.display = 'flex';
             } else {
                 post.style.display = 'none';
             }
         });
 
-        // Update pagination info
-        pageInfo.textContent = `Page ${page} of ${totalPages}`;
-
-        // Update button states
-        prevBtn.disabled = page === 1;
-        nextBtn.disabled = page === totalPages;
+        // Hide button if all posts are visible
+        if (visiblePosts >= allPosts.length) {
+            loadMoreContainer.style.display = 'none';
+        } else {
+            loadMoreContainer.style.display = 'flex';
+        }
     }
 
-    // Only show pagination if more than 4 posts
-    if (allPosts.length > postsPerPage) {
-        pagination.style.display = 'flex';
-        showPage(1);
+    // Initialize
+    showPosts();
 
-        prevBtn.addEventListener('click', function() {
-            if (currentPage > 1) {
-                currentPage--;
-                showPage(currentPage);
-                // Scroll to updates section
-                document.getElementById('updates').scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-
-        nextBtn.addEventListener('click', function() {
-            if (currentPage < totalPages) {
-                currentPage++;
-                showPage(currentPage);
-                // Scroll to updates section
-                document.getElementById('updates').scrollIntoView({ behavior: 'smooth' });
-            }
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            visiblePosts += postsPerLoad;
+            showPosts();
         });
     }
 

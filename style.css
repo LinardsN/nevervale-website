@@ -867,7 +867,10 @@ a.read-more-btn {
     margin-top: 40px;
 }
 
-.view-all-btn {
+a.view-all-btn,
+a.view-all-btn:link,
+a.view-all-btn:visited,
+a.view-all-btn:active {
     font-family: var(--font-display);
     background: transparent;
     border: 1px solid var(--gold-dark);
@@ -880,12 +883,15 @@ a.read-more-btn {
     transition: var(--transition);
     text-transform: uppercase;
     text-decoration: none;
+    display: inline-block;
 }
 
-.view-all-btn:hover {
+a.view-all-btn:hover {
     background: rgba(212, 168, 75, 0.15);
     border-color: var(--gold-bright);
     box-shadow: 0 0 20px rgba(212, 168, 75, 0.2);
+    color: var(--gold-bright);
+    text-decoration: none;
 }
 
 /* ========================================

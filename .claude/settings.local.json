@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(pip install:*)",
-      "Bash(python process_favicon.py:*)"
+      "Bash(python process_favicon.py:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

@@ -859,6 +859,56 @@ a.read-more-btn {
     box-shadow: 0 0 20px rgba(212, 168, 75, 0.2);
 }
 
+/* View All Updates Button */
+.view-all-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.view-all-btn {
+    font-family: var(--font-display);
+    background: transparent;
+    border: 1px solid var(--gold-dark);
+    color: var(--gold-bright);
+    padding: 15px 50px;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.view-all-btn:hover {
+    background: rgba(212, 168, 75, 0.15);
+    border-color: var(--gold-bright);
+    box-shadow: 0 0 20px rgba(212, 168, 75, 0.2);
+}
+
+/* ========================================
+   BLOG LIST PAGE
+   ======================================== */
+.blog-list-page {
+    min-height: 100vh;
+    background: var(--void-black);
+}
+
+.blog-header {
+    padding: 60px 30px 0;
+    text-align: center;
+}
+
+.blog-updates-section {
+    padding-top: 0;
+}
+
+.blog-updates-section::before {
+    display: none;
+}
+
 /* ========================================
    NEWSLETTER SECTION
    ======================================== */

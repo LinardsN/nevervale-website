@@ -4,7 +4,8 @@
       "Bash(pip install:*)",
       "Bash(python process_favicon.py:*)",
       "Bash(mkdir:*)",
-      "Bash(python -m http.server:*)"
+      "Bash(python -m http.server:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []
